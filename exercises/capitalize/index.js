@@ -3,10 +3,17 @@
 // capitalize the first letter of each word in the string then
 // return the capitalized string.
 // --- Examples
-//   capitalize('a short sentence') --> 'A Short Sentence'
+  //   capitalize('a short sentence') --> 'A Short Sentence'
 //   capitalize('a lazy fox') --> 'A Lazy Fox'
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
-function capitalize(str) {}
+function capitalize(str) {
+  const words = str.split(' ');
+  const result = [];
+  words.forEach(word =>{
+    result.push(word[0].toUpperCase() + word.split('').slice(1).join(''));
+  });
+  return result.join(' ');
+}
 
 module.exports = capitalize;

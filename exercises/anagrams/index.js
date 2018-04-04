@@ -8,6 +8,11 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) {}
+function anagrams(stringA, stringB) {
+  stringA = stringA.toLowerCase().replace(/[^\w\s]|_/g, "");
+  stringB = stringB.toLowerCase().replace(/[^\w\s]|_/g, "");
+  return stringA.split('').sort().join('') === stringB.split('').sort().join('');
+}
+   
 
 module.exports = anagrams;
