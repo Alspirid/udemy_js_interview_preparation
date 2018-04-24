@@ -30,11 +30,21 @@ class Tree {
   constructor(){
     this.root = null;
   }
-  traverseBFS(){
-    
+  traverseBF(fn){
+    const arr = [this.root];
+    while (arr.length){
+      const node = arr.shift();
+      arr.push(...node.children);
+      fn(node);
+    }
   }
-  traverseDFS(){
-    
+  traverseDF(fn){
+    const arr = [this.root];
+    while(arr.length){
+      const node = arr.shift();
+      arr.unshift(...node.children);
+      fn(node);
+    }
   }
 }
 
